@@ -21,25 +21,31 @@ import static java.util.Optional.ofNullable;
 @Component
 public class TrelloClient {
 
+    @Autowired
+    private RestTemplate restTemplate;
+    @Autowired
+    private TrelloConfig trelloConfig;
 
 //    private static final Logger LOGGER = LoggerFactory.getLogger(TrelloClient.class);
 
-    @Autowired
-    private TrelloConfig trelloConfig;
-    @Autowired
-    private RestTemplate restTemplate;
-
-    public List<TrelloBoardDto> getTrelloBoards() {
-
-        URI url = UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/members/" + trelloConfig.getUsername() + "/boards")
+    private URI getUrl() {
+        return UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/members/" + trelloConfig.getUsername() + "/boards")
                 .queryParam("key", trelloConfig.getTrelloAppKey())
                 .queryParam("token", trelloConfig.getTrelloToken())
                 .queryParam("fields", "name,id")
                 .queryParam("lists", "all").build().encode().toUri();
+    }
+
+    public List<TrelloBoardDto> getTrelloBoards() {
+//        URI url = UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/members/" + trelloConfig.getUsername() + "/boards")
+//                .queryParam("key", trelloConfig.getTrelloAppKey())
+//                .queryParam("token", trelloConfig.getTrelloToken())
+//                .queryParam("fields", "name,id")
+//                .queryParam("lists", "all").build().encode().toUri();
 
         try {
-            log.debug(url.toString());
-            TrelloBoardDto[] boardsResponse = restTemplate.getForObject(url, TrelloBoardDto[].class);
+            log.debug(getUrl().toString());
+            TrelloBoardDto[] boardsResponse = restTemplate.getForObject(getUrl(), TrelloBoardDto[].class);
             return Arrays.asList(ofNullable(boardsResponse).orElse(new TrelloBoardDto[0]));
         } catch (RestClientException e) {
             log.error(e.getMessage(), e);
