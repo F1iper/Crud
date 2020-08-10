@@ -1,2 +1,13 @@
-package com.project.domain;public class Mail {
+package com.project.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public class Mail {
+    private String mailTo;
+    private String subject;
+    private String message;
+    private String toCc;
 }

@@ -1,8 +1,6 @@
 package com.project.trello.client;
 
-import com.project.domain.CreatedTrelloCard;
-import com.project.domain.TrelloBoardDto;
-import com.project.domain.TrelloCardDto;
+import com.project.domain.*;
 import com.project.trello.config.TrelloConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

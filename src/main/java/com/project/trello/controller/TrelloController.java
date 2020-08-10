@@ -1,4 +1,4 @@
-package com.project.controller;
+package com.project.trello.controller;
 
 import com.project.domain.CreatedTrelloCard;
 import com.project.domain.TrelloBoardDto;
