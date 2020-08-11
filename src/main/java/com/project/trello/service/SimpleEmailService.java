@@ -1,6 +1,6 @@
-package com.project.service;
+package com.project.trello.service;
 
-import com.project.domain.Mail;
+import com.project.trello.domain.Mail;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,9 +35,9 @@ public class SimpleEmailService {
         mailMessage.setTo(mail.getMailTo());
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
-        if (mail.getToCc() == null)
-            return mailMessage;
-        mailMessage.setCc(mail.getToCc());
+//        if (mail.getToCc() == null)
+//            return mailMessage;
+//        mailMessage.setCc(mail.getToCc());
         return mailMessage;
     }
 }
