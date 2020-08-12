@@ -1,4 +1,4 @@
-package com.project.domain;
+package com.project.tasks.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

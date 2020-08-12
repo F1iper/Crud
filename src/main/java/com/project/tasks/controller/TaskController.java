@@ -1,8 +1,8 @@
-package com.project.controller;
+package com.project.tasks.controller;
 
-import com.project.domain.TaskDto;
-import com.project.mapper.TaskMapper;
-import com.project.service.DbService;
+import com.project.tasks.domain.TaskDto;
+import com.project.tasks.mapper.TaskMapper;
+import com.project.tasks.service.DbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

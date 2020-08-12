@@ -1,4 +1,4 @@
-package com.project.controller;
+package com.project.tasks.controller;
 
 public class TaskNotFoundException extends Exception {
 

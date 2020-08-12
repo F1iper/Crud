@@ -1,4 +1,4 @@
-package com.project.domain;
+package com.project.trello.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

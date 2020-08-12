@@ -1,6 +1,6 @@
-package com.project.repository;
+package com.project.tasks.repository;
 
-import com.project.domain.Task;
+import com.project.tasks.domain.Task;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -19,5 +19,8 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
 
     @Override
     void deleteById(Long taskId);
+
+    @Override
+    long count();
 
 }

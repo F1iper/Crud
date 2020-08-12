@@ -1,8 +1,8 @@
 package com.project.trello.client;
 
-import com.project.domain.CreatedTrelloCard;
-import com.project.domain.TrelloBoardDto;
-import com.project.domain.TrelloCardDto;
+import com.project.trello.domain.CreatedTrelloCard;
+import com.project.trello.domain.TrelloBoardDto;
+import com.project.trello.domain.TrelloCardDto;
 import com.project.trello.config.TrelloConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +16,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
