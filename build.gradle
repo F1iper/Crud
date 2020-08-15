@@ -24,8 +24,8 @@ dependencies {
 
         compile('org.projectlombok:lombok')
         annotationProcessor('org.projectlombok:lombok')
-//        compile('mysql:mysql-connector-java')
-        compile('org.postgresql:postgresql')
+        compile('mysql:mysql-connector-java')
+//        compile('org.postgresql:postgresql')
 
     }
     test {
