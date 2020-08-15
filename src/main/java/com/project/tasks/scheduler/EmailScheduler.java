@@ -2,7 +2,7 @@ package com.project.tasks.scheduler;
 
 import com.project.tasks.repository.TaskRepository;
 import com.project.trello.config.AdminConfig;
-import com.project.trello.domain.Mail;
+import com.project.tasks.domain.Mail;
 import com.project.trello.service.SimpleEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -32,6 +32,7 @@ public class EmailScheduler {
 
     private String chooseMessageForm() {
         long size = taskRepository.count();
-        return size > 1 ? MESSAGE + size + " tasks" : MESSAGE + size + " task";
+        String info = MESSAGE + size;
+        return size > 1 ? info + " tasks" : info + " task";
     }
 }

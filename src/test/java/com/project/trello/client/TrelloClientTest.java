@@ -1,8 +1,8 @@
 package com.project.trello.client;
 
-import com.project.trello.domain.CreatedTrelloCard;
-import com.project.trello.domain.TrelloBoardDto;
-import com.project.trello.domain.TrelloCardDto;
+import com.project.tasks.domain.CreatedTrelloCard;
+import com.project.tasks.domain.TrelloBoardDto;
+import com.project.tasks.domain.TrelloCardDto;
 import com.project.trello.config.TrelloConfig;
 import org.junit.Before;
 import org.junit.Test;

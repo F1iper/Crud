@@ -1,6 +1,6 @@
 package com.project.service;
 
-import com.project.trello.domain.Mail;
+import com.project.tasks.domain.Mail;
 import com.project.trello.service.SimpleEmailService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

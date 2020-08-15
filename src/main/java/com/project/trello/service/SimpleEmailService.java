@@ -1,6 +1,6 @@
 package com.project.trello.service;
 
-import com.project.trello.domain.Mail;
+import com.project.tasks.domain.Mail;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
