@@ -1,9 +1,12 @@
 package com.project.trello.client;
 
-import com.project.trello.config.TrelloConfig;
+import com.project.domain.AttachmentByType;
+import com.project.domain.Badges;
 import com.project.tasks.domain.CreatedTrelloCard;
+import com.project.tasks.domain.Trello;
 import com.project.tasks.domain.TrelloBoardDto;
 import com.project.tasks.domain.TrelloCardDto;
+import com.project.trello.config.TrelloConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,6 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Optional.ofNullable;
+
 @Slf4j
 @Component
 public class TrelloClient {
@@ -37,12 +41,6 @@ public class TrelloClient {
     }
 
     public List<TrelloBoardDto> getTrelloBoards() {
-//        URI url = UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/members/" + trelloConfig.getUsername() + "/boards")
-//                .queryParam("key", trelloConfig.getTrelloAppKey())
-//                .queryParam("token", trelloConfig.getTrelloToken())
-//                .queryParam("fields", "name,id")
-//                .queryParam("lists", "all").build().encode().toUri();
-
         try {
             log.debug(getUrl().toString());
             TrelloBoardDto[] boardsResponse = restTemplate.getForObject(getUrl(), TrelloBoardDto[].class);
@@ -54,7 +52,7 @@ public class TrelloClient {
 
     }
 
-    public CreatedTrelloCard createNewCard(TrelloCardDto trelloCardDto) {
+        public CreatedTrelloCard createNewCard(TrelloCardDto trelloCardDto) {
         URI url = UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/cards")
                 .queryParam("key", trelloConfig.getTrelloAppKey())
                 .queryParam("token", trelloConfig.getTrelloToken())

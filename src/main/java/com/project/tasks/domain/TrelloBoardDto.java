@@ -2,6 +2,7 @@ package com.project.tasks.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.project.domain.Badges;
 import lombok.*;
 
 import java.util.List;

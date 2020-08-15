@@ -23,14 +23,6 @@ public class TrelloController {
     @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
     public List<TrelloBoardDto> getTrelloBoards() {
         return trelloService.fetchTrelloBoards();
-
-
-//        return trelloClient.getTrelloBoards()
-//                .stream()
-//                .filter(board -> board.getId() != null && board.getName() != null)
-//                .filter(board -> board.getName().contains("Kodilla"))
-//                .collect(Collectors.toList());
-
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "createTrelloCard")
