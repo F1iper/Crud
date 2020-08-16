@@ -32,6 +32,7 @@ public class EmailScheduler {
     private String chooseMessageForm() {
         long size = taskRepository.count();
         String info = MESSAGE + size;
-        return size > 1 ? info + " tasks" : info + " task";
+        return info + (size > 1 ? " tasks" : " task");
+
     }
 }
