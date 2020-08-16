@@ -1,6 +1,6 @@
-package com.project.trello.service;
+package com.project.tasks.service;
 
-import com.project.trello.config.AdminConfig;
+import com.project.config.AdminConfig;
 import com.project.tasks.domain.CreatedTrelloCard;
 import com.project.tasks.domain.Mail;
 import com.project.tasks.domain.TrelloBoardDto;

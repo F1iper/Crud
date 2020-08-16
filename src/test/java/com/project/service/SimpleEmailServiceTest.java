@@ -1,7 +1,7 @@
 package com.project.service;
 
 import com.project.tasks.domain.Mail;
-import com.project.trello.service.SimpleEmailService;
+import com.project.tasks.service.SimpleEmailService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -29,7 +29,6 @@ public class SimpleEmailServiceTest {
         Mail mail = new Mail("test@test.com",
                 "Test",
                 "test");
-//                "test2@test2.com");
 
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(mail.getMailTo());

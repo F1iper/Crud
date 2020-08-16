@@ -1,12 +1,9 @@
 package com.project.trello.client;
 
-import com.project.domain.AttachmentByType;
-import com.project.domain.Badges;
 import com.project.tasks.domain.CreatedTrelloCard;
-import com.project.tasks.domain.Trello;
 import com.project.tasks.domain.TrelloBoardDto;
 import com.project.tasks.domain.TrelloCardDto;
-import com.project.trello.config.TrelloConfig;
+import com.project.config.TrelloConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,8 +26,6 @@ public class TrelloClient {
     private RestTemplate restTemplate;
     @Autowired
     private TrelloConfig trelloConfig;
-
-//    private static final Logger LOGGER = LoggerFactory.getLogger(TrelloClient.class);
 
     private URI getUrl() {
         return UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/members/" + trelloConfig.getUsername() + "/boards")

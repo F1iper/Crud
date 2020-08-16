@@ -1,4 +1,4 @@
-package com.project.trello.config;
+package com.project.config;
 
 import lombok.Getter;
 

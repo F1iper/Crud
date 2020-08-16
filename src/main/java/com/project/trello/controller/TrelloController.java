@@ -4,7 +4,7 @@ import com.project.tasks.domain.CreatedTrelloCard;
 import com.project.tasks.domain.TrelloBoardDto;
 import com.project.tasks.domain.TrelloCardDto;
 import com.project.trello.client.TrelloClient;
-import com.project.trello.service.TrelloService;
+import com.project.tasks.service.TrelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
