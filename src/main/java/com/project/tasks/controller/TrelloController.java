@@ -1,32 +1,33 @@
 package com.project.tasks.controller;
 
-import com.project.tasks.domain.CreatedTrelloCard;
+import com.project.tasks.domain.CreatedTrelloCardDto;
 import com.project.tasks.domain.TrelloBoardDto;
 import com.project.tasks.domain.TrelloCardDto;
-import com.project.trello.client.TrelloClient;
-import com.project.tasks.service.TrelloService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
+import com.project.tasks.trello.facade.TrelloFacade;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/v1/trello")
 @CrossOrigin(origins = "*")
+@RequiredArgsConstructor
 public class TrelloController {
 
-    @Autowired
-    private TrelloService trelloService;
-    @Autowired
-    private TrelloClient trelloClient;
+  private final TrelloFacade trelloFacade;
 
-    @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
-    public List<TrelloBoardDto> getTrelloBoards() {
-        return trelloService.fetchTrelloBoards();
-    }
+  @GetMapping
+  public List<TrelloBoardDto> getTrelloBoards() {
+    return trelloFacade.fetchTrelloBoards();
+  }
 
-    @RequestMapping(method = RequestMethod.POST, value = "createTrelloCard")
-    public CreatedTrelloCard createNewCard(@RequestBody TrelloCardDto trelloCardDto) {
-        return trelloService.createTrelloCard(trelloCardDto);
-    }
+  @PostMapping
+  public CreatedTrelloCardDto createTrelloCartCard(@RequestBody TrelloCardDto trelloCardDto) {
+    return trelloFacade.createCard(trelloCardDto);
+  }
 }

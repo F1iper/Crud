@@ -5,9 +5,10 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class Mail {
+public class TrelloList {
 
-  private String mailTo;
-  private String subject;
-  private String message;
+  private String id;
+  private String name;
+  private boolean isClosed;
+
 }

@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Badges {
 
-    @JsonProperty("votes")
-    private int votes;
+  @JsonProperty("votes")
+  private int votes;
 
-    @JsonProperty("attachmentsByType")
-    private AttachmentByType attachments;
+  @JsonProperty("attachmentsByType")
+  private AttachmentByType attachments;
 
 }
