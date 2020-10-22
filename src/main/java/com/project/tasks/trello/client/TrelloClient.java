@@ -10,8 +10,8 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
@@ -19,12 +19,11 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class TrelloClient {
 
-  @Autowired
-  private RestTemplate restTemplate;
-  @Autowired
-  private TrelloConfig trelloConfig;
+  private final RestTemplate restTemplate;
+  private final TrelloConfig trelloConfig;
 
   private URI getUrl() {
     return UriComponentsBuilder.fromHttpUrl(
