@@ -3,10 +3,7 @@ package com.project.tasks.trello.client;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
-import com.project.tasks.domain.AttachmentByType;
-import com.project.tasks.domain.Badges;
 import com.project.tasks.domain.CreatedTrelloCardDto;
-import com.project.tasks.domain.Trello;
 import com.project.tasks.domain.TrelloBoardDto;
 import com.project.tasks.domain.TrelloCardDto;
 import com.project.tasks.trello.config.TrelloConfig;
@@ -78,8 +75,7 @@ public class TrelloClientTest {
     CreatedTrelloCardDto createdTrelloCardDto = new CreatedTrelloCardDto(
         "1",
         "Test task",
-        "http://test.com",
-        new Badges(0, new AttachmentByType(new Trello(0, 0)))
+        "http://test.com"
     );
 
     when(restTemplate.postForObject(uri, null, CreatedTrelloCardDto.class)).thenReturn(

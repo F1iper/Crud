@@ -26,6 +26,7 @@ dependencies {
         annotationProcessor('org.projectlombok:lombok')
         compile('mysql:mysql-connector-java')
 //        compile('org.postgresql:postgresql')
+        compile 'com.google.code.gson:gson:2.8.2'
 
     }
     test {
