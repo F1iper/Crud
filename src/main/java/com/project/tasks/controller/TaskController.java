@@ -27,19 +27,19 @@ public class TaskController {
   private final DbService service;
   private final TaskMapper taskMapper;
 
-  @GetMapping(value = "getTasks")
+  @GetMapping(value = "/getTasks")
   public List<TaskDto> getTasks() {
     return taskMapper.mapToTaskDtoList(service.getAllTasks());
   }
 
-  @GetMapping
-  public TaskDto getTask(@RequestParam Long taskId) throws TaskNotFoundException {
-    return taskMapper.mapToTaskDto(service.getTask(taskId).orElseThrow(TaskNotFoundException::new));
+  @GetMapping("/{id}")
+  public TaskDto getTask(@RequestParam Long id) throws TaskNotFoundException {
+    return taskMapper.mapToTaskDto(service.getTask(id).orElseThrow(TaskNotFoundException::new));
   }
 
-  @DeleteMapping
-  public void deleteTask(@RequestParam Long taskId) {
-    service.deleteTask(taskId);
+  @DeleteMapping("/{id}")
+  public void deleteTask(@RequestParam Long id) {
+    service.deleteTask(id);
   }
 
   @PutMapping
